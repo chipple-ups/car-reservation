@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		ACBD0279263D9E6A00DBF110 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0278263D9E6A00DBF110 /* ReserveViewController.swift */; };
 		ACBD027C263D9F3700DBF110 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD027B263D9F3700DBF110 /* PlaceViewController.swift */; };
 		ACBD027F263D9F7C00DBF110 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD027E263D9F7C00DBF110 /* MyPageViewController.swift */; };
+		ACBD0289263FF03900DBF110 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0288263FF03900DBF110 /* TabBarController.swift */; };
+		ACBD028C2640F50300DBF110 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = ACBD028B2640F50300DBF110 /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		ACBD0278263D9E6A00DBF110 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
 		ACBD027B263D9F3700DBF110 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		ACBD027E263D9F7C00DBF110 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		ACBD0288263FF03900DBF110 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		ACBD028B2640F50300DBF110 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 				98D2EFED481005AE53F5B0FB /* Pods-car-reservation.debug.xcconfig */,
 				5AC74CAC88A61D41A3539F0B /* Pods-car-reservation.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -95,10 +98,12 @@
 				ACBD025B263D921C00DBF110 /* SceneDelegate.swift */,
 				ACBD025D263D921D00DBF110 /* ViewController.swift */,
 				ACBD025F263D921D00DBF110 /* Main.storyboard */,
+				ACBD0288263FF03900DBF110 /* TabBarController.swift */,
 				ACBD027E263D9F7C00DBF110 /* MyPageViewController.swift */,
 				ACBD027B263D9F3700DBF110 /* PlaceViewController.swift */,
 				ACBD0278263D9E6A00DBF110 /* ReserveViewController.swift */,
 				ACBD0275263D9B5200DBF110 /* HomeViewController.swift */,
+				ACBD028B2640F50300DBF110 /* GoogleService-Info (1).plist */,
 				ACBD0272263D97DD00DBF110 /* LoginViewController.swift */,
 				ACBD0262263D921E00DBF110 /* Assets.xcassets */,
 				ACBD0264263D921E00DBF110 /* LaunchScreen.storyboard */,
@@ -169,6 +174,7 @@
 				ACBD0266263D921E00DBF110 /* LaunchScreen.storyboard in Resources */,
 				ACBD0263263D921E00DBF110 /* Assets.xcassets in Resources */,
 				ACBD0261263D921D00DBF110 /* Main.storyboard in Resources */,
+				ACBD028C2640F50300DBF110 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +230,7 @@
 				ACBD0276263D9B5200DBF110 /* HomeViewController.swift in Sources */,
 				ACBD0273263D97DD00DBF110 /* LoginViewController.swift in Sources */,
 				ACBD025E263D921D00DBF110 /* ViewController.swift in Sources */,
+				ACBD0289263FF03900DBF110 /* TabBarController.swift in Sources */,
 				ACBD027C263D9F3700DBF110 /* PlaceViewController.swift in Sources */,
 				ACBD025A263D921C00DBF110 /* AppDelegate.swift in Sources */,
 				ACBD025C263D921C00DBF110 /* SceneDelegate.swift in Sources */,
