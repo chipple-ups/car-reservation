@@ -351,6 +351,7 @@ PODS:
   - SDWebImage (5.11.0):
     - SDWebImage/Core (= 5.11.0)
   - SDWebImage/Core (5.11.0)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Firebase (= 7.5.0)
@@ -360,6 +361,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - FirebaseUI/Storage
   - RealmSwift (= 10.1.4)
+  - SVProgressHUD (= 2.2.5)
 
 SPEC REPOS:
   trunk:
@@ -386,6 +388,7 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SDWebImage
+    - SVProgressHUD
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -411,7 +414,8 @@ SPEC CHECKSUMS:
   Realm: 80f4fb2971ccb9adc27a47d0955ae8e533a7030b
   RealmSwift: 0e566ca714edb377bba8ea0811eafcea0b93734e
   SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: e3b57df1ccf3e1fd29ec11a44615426daf3fb60e
+PODFILE CHECKSUM: 5404a173d8302d0fcf493a3c526593892e9889f9
 
 COCOAPODS: 1.10.1

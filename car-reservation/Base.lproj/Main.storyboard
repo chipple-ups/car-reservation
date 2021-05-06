@@ -11,13 +11,53 @@
         <!--Login View Controller-->
         <scene sceneID="SV2-f0-6IN">
             <objects>
-                <viewController storyboardIdentifier="Login" id="2Hj-Tw-zW0" customClass="LoginViewController" customModule="car_reservation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" modalPresentationStyle="fullScreen" id="2Hj-Tw-zW0" customClass="LoginViewController" customModule="car_reservation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxt-IK-oq7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="メールアドレス" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9ce-Le-QUj">
+                                <rect key="frame" x="57" y="124" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="pR2-kP-5s8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="パスワード" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qa2-JC-O4g">
+                                <rect key="frame" x="57" y="168" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="yzf-Na-YQ6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RwO-mf-y6i">
+                                <rect key="frame" x="57" y="212" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="fnR-he-DKW"/>
+                                </constraints>
+                                <state key="normal" title="ログイン" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="handleLoginButton:" destination="2Hj-Tw-zW0" eventType="touchUpInside" id="peR-LB-Fhw"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GNu-RS-Mo7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9ce-Le-QUj" firstAttribute="top" secondItem="GNu-RS-Mo7" secondAttribute="top" constant="80" id="GOk-We-wRj"/>
+                            <constraint firstItem="Qa2-JC-O4g" firstAttribute="centerX" secondItem="uxt-IK-oq7" secondAttribute="centerX" id="Nvn-eE-dIt"/>
+                            <constraint firstItem="RwO-mf-y6i" firstAttribute="top" secondItem="Qa2-JC-O4g" secondAttribute="bottom" constant="10" id="PWm-Nv-2Qw"/>
+                            <constraint firstItem="Qa2-JC-O4g" firstAttribute="top" secondItem="9ce-Le-QUj" secondAttribute="bottom" constant="10" id="s3h-V7-bU4"/>
+                            <constraint firstItem="RwO-mf-y6i" firstAttribute="centerX" secondItem="uxt-IK-oq7" secondAttribute="centerX" id="uZV-b1-g8f"/>
+                            <constraint firstItem="9ce-Le-QUj" firstAttribute="centerX" secondItem="uxt-IK-oq7" secondAttribute="centerX" id="vCf-nU-PgF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mailAddressTextField" destination="9ce-Le-QUj" id="wsd-om-ML0"/>
+                        <outlet property="passwordTextField" destination="Qa2-JC-O4g" id="IPt-X3-oav"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ynh-9c-vfN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +167,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn" width="300" height="40"/>
         <image name="camera" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="reserve" width="40" height="40"/>

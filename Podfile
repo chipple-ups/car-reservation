@@ -13,7 +13,7 @@ pod 'RealmSwift','10.1.4'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
-
+  pod 'SVProgressHUD','2.2.5'
 
 
 
