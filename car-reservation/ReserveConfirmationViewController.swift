@@ -1,31 +1,16 @@
 //
-//  ReserveViewController.swift
+//  ReserveConfirmationViewController.swift
 //  car-reservation
 //
-//  Created by 岡澤宏 on 2021/05/01.
+//  Created by 岡澤宏 on 2021/05/07.
 //
 
 import UIKit
 
+class ReserveConfirmationViewController: UIViewController {
 
-class ReserveViewController: UIViewController {
-    @IBOutlet weak var datePicker: UIDatePicker!
-    
-    ///var date = Date()
-    ///var datePicker: UIDatePicker = UIDatePicker()
-    //ピッカー設定
-    ///datePicker.datePickerMode = UIDatePicker.Mode.date
-    ///datePicker.locale = Locale.current
-    ///date = datePicker
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-        
 
         // Do any additional setup after loading the view.
     }
