@@ -10,6 +10,7 @@
 		37D58086B7398CA8E561ABBE /* Pods_car_reservation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663E233C08E7D125D89297AD /* Pods_car_reservation.framework */; };
 		AC95DDE026464E5D003B3BA3 /* PlaceShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95DDDF26464E5D003B3BA3 /* PlaceShowViewController.swift */; };
 		AC95DDE32646C772003B3BA3 /* PlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95DDE22646C772003B3BA3 /* PlaceInfo.swift */; };
+		AC95DDE62646CD46003B3BA3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95DDE52646CD46003B3BA3 /* Const.swift */; };
 		ACBD025A263D921C00DBF110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0259263D921C00DBF110 /* AppDelegate.swift */; };
 		ACBD025C263D921C00DBF110 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD025B263D921C00DBF110 /* SceneDelegate.swift */; };
 		ACBD0261263D921D00DBF110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBD025F263D921D00DBF110 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		98D2EFED481005AE53F5B0FB /* Pods-car-reservation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car-reservation.debug.xcconfig"; path = "Target Support Files/Pods-car-reservation/Pods-car-reservation.debug.xcconfig"; sourceTree = "<group>"; };
 		AC95DDDF26464E5D003B3BA3 /* PlaceShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceShowViewController.swift; sourceTree = "<group>"; };
 		AC95DDE22646C772003B3BA3 /* PlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfo.swift; sourceTree = "<group>"; };
+		AC95DDE52646CD46003B3BA3 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		ACBD0256263D921C00DBF110 /* car-reservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "car-reservation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBD0259263D921C00DBF110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACBD025B263D921C00DBF110 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				ACBD0288263FF03900DBF110 /* TabBarController.swift */,
 				ACBD027E263D9F7C00DBF110 /* MyPageViewController.swift */,
 				ACBD027B263D9F3700DBF110 /* PlaceViewController.swift */,
+				AC95DDE52646CD46003B3BA3 /* Const.swift */,
 				AC95DDDF26464E5D003B3BA3 /* PlaceShowViewController.swift */,
 				AC95DDE22646C772003B3BA3 /* PlaceInfo.swift */,
 				ACBD0278263D9E6A00DBF110 /* ReserveViewController.swift */,
@@ -238,6 +241,7 @@
 				ACBE41502644EC2B007A38AD /* ReserveConfirmationViewController.swift in Sources */,
 				ACBD0289263FF03900DBF110 /* TabBarController.swift in Sources */,
 				ACBD027C263D9F3700DBF110 /* PlaceViewController.swift in Sources */,
+				AC95DDE62646CD46003B3BA3 /* Const.swift in Sources */,
 				ACBD025A263D921C00DBF110 /* AppDelegate.swift in Sources */,
 				ACBD025C263D921C00DBF110 /* SceneDelegate.swift in Sources */,
 				AC95DDE026464E5D003B3BA3 /* PlaceShowViewController.swift in Sources */,

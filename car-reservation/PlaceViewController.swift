@@ -14,15 +14,18 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         
         var placeArray: [PlaceInfo] = []
+        var listener: ListenerRegistration?
         
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+
+        
     }
     
     //　データの数（セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return placeArray.count
     }
     
     //　各セルの内容を返すメソッド
