@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Firebase
+
 
 class PlaceShowViewController: UIViewController {
 
+    var name : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -45,6 +45,13 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellSegue",sender: nil)
+        
+        let placeShowViewController = storyboard!.instantiateViewController(withIdentifier: "Place") as! PlaceShowViewController
+        let task = placeArray[indexPath.row]
+        let placename = task.name
+        placeShowViewController.name = placename
+            present(placeShowViewController, animated: true)
+        
 
     }
     
@@ -54,7 +61,7 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // ログイン済みか確認
         if Auth.auth().currentUser != nil {
             // listenerを登録して投稿データの更新を監視する
-            let postsRef = Firestore.firestore().collection(Const.PlacePath).order(by: "date", descending: true)
+            let postsRef = Firestore.firestore().collection(Const.PlacePath).order(by: "name", descending: true)
             listener = postsRef.addSnapshotListener() { (querySnapshot, error) in
                 if let error = error {
                     print("DEBUG_PRINT: snapshotの取得が失敗しました。 \(error)")
