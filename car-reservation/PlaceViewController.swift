@@ -20,8 +20,10 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
-
         
+        // カスタムセルを登録する
+        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "Cell")
     }
     
     //　データの数（セルの数）を返すメソッド
