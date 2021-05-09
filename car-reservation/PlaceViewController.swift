@@ -22,8 +22,8 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
         
         // カスタムセルを登録する
-        let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "Cell")
+        //let nib = UINib(nibName: "PostTableViewCell", bundle: nil)
+        //tableView.register(nib, forCellReuseIdentifier: "Cell")
     }
     
     //　データの数（セルの数）を返すメソッド
@@ -48,7 +48,36 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("DEBUG_PRINT: viewWillAppear")
+        // ログイン済みか確認
+        if Auth.auth().currentUser != nil {
+            // listenerを登録して投稿データの更新を監視する
+            let postsRef = Firestore.firestore().collection(Const.PlacePath).order(by: "date", descending: true)
+            listener = postsRef.addSnapshotListener() { (querySnapshot, error) in
+                if let error = error {
+                    print("DEBUG_PRINT: snapshotの取得が失敗しました。 \(error)")
+                    return
+                }
+                // 取得したdocumentをもとにPostDataを作成し、postArrayの配列にする。
+                self.placeArray = querySnapshot!.documents.map { document in
+                    print("DEBUG_PRINT: document取得 \(document.documentID)")
+                    let postData = PlaceInfo(document: document)
+                    return postData
+                }
+                // TableViewの表示を更新する
+                self.tableView.reloadData()
+            }
+        }
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("DEBUG_PRINT: viewWillDisappear")
+        // listenerを削除して監視を停止する
+        listener?.remove()
+    }
 
     /*
     // MARK: - Navigation
