@@ -11,11 +11,11 @@ import Firebase
 class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
+    var placeArray: [PlaceInfo] = []
+    var listener: ListenerRegistration?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var placeArray: [PlaceInfo] = []
-        var listener: ListenerRegistration?
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -27,18 +27,23 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //　データの数（セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return placeArray.count
+        
     }
     
     //　各セルの内容を返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
+        // Cellに値を設定する.  --- ここから ---
+        let task = placeArray[indexPath.row]
+        cell.textLabel?.text = task.info
+        
         return cell
     }
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "cellSegue",sender: nil)
+
     }
     
 
