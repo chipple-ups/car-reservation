@@ -8,12 +8,26 @@
 import UIKit
 import Firebase
 
-///class PlaceInfo: NSObject {
-    ///var id: String
-    ///var name: String?
-    ///var info: String?
-    ///var pay: String?
+class PlaceInfo: NSObject {
+    var id: String
+    var name: String?
+    var info: String?
+    var pay: String?
+    var date: Date?
     
+    init(document: QueryDocumentSnapshot) {
+        self.id = document.documentID
+
+        let postDic = document.data()
+
+        self.name = postDic["name"] as? String
+
+        self.info = postDic["info"] as? String
+
+        let timestamp = postDic["date"] as? Timestamp
+        self.date = timestamp?.dateValue()
 
 
+
+}
 }

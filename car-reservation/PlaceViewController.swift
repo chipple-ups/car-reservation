@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +41,7 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         performSegue(withIdentifier: "cellSegue",sender: nil)
     }
     
-    
+
 
     /*
     // MARK: - Navigation
