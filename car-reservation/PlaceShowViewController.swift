@@ -10,7 +10,11 @@ import Firebase
 
 
 class PlaceShowViewController: UIViewController {
-
+    @IBOutlet weak var placename: UILabel!
+    @IBOutlet weak var placeaddress: UILabel!
+    @IBOutlet weak var placeinfo: UILabel!
+    
+    
     var name : String?
     
     override func viewDidLoad() {

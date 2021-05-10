@@ -13,7 +13,8 @@ class PlaceInfo: NSObject {
     var name: String?
     var info: String?
     var pay: String?
-    var date: Date?
+    var address: String?
+
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
@@ -24,8 +25,11 @@ class PlaceInfo: NSObject {
 
         self.info = postDic["info"] as? String
 
-        let timestamp = postDic["date"] as? Timestamp
-        self.date = timestamp?.dateValue()
+        self.address = postDic["address"] as? String
+
+        self.pay = postDic["pay"] as? String
+
+
 
 
 

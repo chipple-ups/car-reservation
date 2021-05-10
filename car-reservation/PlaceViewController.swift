@@ -38,19 +38,19 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         // Cellに値を設定する.  --- ここから ---
         let task = placeArray[indexPath.row]
-        cell.textLabel?.text = task.info
+        cell.textLabel?.text = task.name
         
         return cell
     }
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "cellSegue",sender: nil)
-        
-        let placeShowViewController = storyboard!.instantiateViewController(withIdentifier: "Place") as! PlaceShowViewController
+        ///performSegue(withIdentifier: "cellSegue",sender: nil)
+        let placeShowViewController = storyboard!.instantiateViewController(withIdentifier: "Cell") as! PlaceShowViewController
         let task = placeArray[indexPath.row]
         let placename = task.name
         placeShowViewController.name = placename
             present(placeShowViewController, animated: true)
+        
         
 
     }

@@ -293,41 +293,44 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PAF-HY-DTR">
-                                <rect key="frame" x="10" y="265" width="394" height="300"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="mws-7R-YBK"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-Lu-tlC">
+                                <rect key="frame" x="10" y="285" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E71-ic-Zh7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PAF-HY-DTR" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="2rK-r0-Cnf"/>
                             <constraint firstItem="ncV-7f-TeZ" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="2wA-Xa-5Fw"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="ncV-7f-TeZ" secondAttribute="trailing" constant="10" id="6ha-rs-4s3"/>
+                            <constraint firstItem="hD0-Lu-tlC" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="91h-fX-3SZ"/>
                             <constraint firstItem="WXc-ck-cKo" firstAttribute="top" secondItem="E71-ic-Zh7" secondAttribute="top" constant="30" id="AEe-vr-4sn"/>
+                            <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="74V-kf-8Lu" secondAttribute="trailing" constant="10" id="Aqv-82-NyU"/>
                             <constraint firstItem="ncV-7f-TeZ" firstAttribute="top" secondItem="Bq0-QV-G9v" secondAttribute="bottom" constant="30" id="Ccg-VG-07K"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="WXc-ck-cKo" secondAttribute="trailing" constant="10" id="GbY-Ky-wp4"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="Bq0-QV-G9v" secondAttribute="trailing" constant="10" id="Gc0-N3-QCP"/>
-                            <constraint firstItem="PAF-HY-DTR" firstAttribute="top" secondItem="74V-kf-8Lu" secondAttribute="bottom" constant="10" id="HwH-Ra-Jew"/>
                             <constraint firstItem="av1-as-QtW" firstAttribute="top" secondItem="ncV-7f-TeZ" secondAttribute="bottom" constant="30" id="Jok-d7-355"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="av1-as-QtW" secondAttribute="trailing" constant="10" id="O2d-vO-FSF"/>
                             <constraint firstItem="74V-kf-8Lu" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="Ovs-lX-ECv"/>
-                            <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="PAF-HY-DTR" secondAttribute="trailing" constant="10" id="VHX-p3-QMy"/>
+                            <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="hD0-Lu-tlC" secondAttribute="trailing" constant="10" id="Qkw-al-F4q"/>
+                            <constraint firstItem="hD0-Lu-tlC" firstAttribute="top" secondItem="74V-kf-8Lu" secondAttribute="bottom" constant="30" id="Yd1-3K-m34"/>
                             <constraint firstItem="Bq0-QV-G9v" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="Yhn-4d-5ye"/>
                             <constraint firstItem="av1-as-QtW" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="gMm-Nw-rT3"/>
                             <constraint firstItem="Bq0-QV-G9v" firstAttribute="top" secondItem="WXc-ck-cKo" secondAttribute="bottom" constant="30" id="hmd-5X-oeE"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="74V-kf-8Lu" secondAttribute="trailing" constant="10" id="jdC-ew-skI"/>
+                            <constraint firstItem="74V-kf-8Lu" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="lDV-X7-etD"/>
                             <constraint firstItem="74V-kf-8Lu" firstAttribute="top" secondItem="av1-as-QtW" secondAttribute="bottom" constant="30" id="rfW-cx-Qaz"/>
                             <constraint firstItem="WXc-ck-cKo" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="xfy-U1-3gl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggY-dP-Dku"/>
+                    <connections>
+                        <outlet property="placeaddress" destination="av1-as-QtW" id="69Q-Yh-xR0"/>
+                        <outlet property="placeinfo" destination="hD0-Lu-tlC" id="QQr-DA-qeB"/>
+                        <outlet property="placename" destination="Bq0-QV-G9v" id="Plv-Yk-qRq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MIW-u1-gcX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -361,9 +364,6 @@
         <image name="home" width="25" height="25"/>
         <image name="setting" width="25" height="25"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
