@@ -7,20 +7,28 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
 
 class PlaceShowViewController: UIViewController {
     @IBOutlet weak var placename: UILabel!
     @IBOutlet weak var placeaddress: UILabel!
     @IBOutlet weak var placeinfo: UILabel!
+    @IBOutlet weak var ImageView: UIImageView!
     
     
     var name : String?
+    var info : String?
+    var address : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        print(name!)
+        placename.text = name
+        placeinfo.text = info
+        placeaddress.text = address
+        
             
         
 

@@ -181,7 +181,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-Sf-yBy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-Sf-yBy">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -299,6 +299,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="画像" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hun-cO-9pA">
+                                <rect key="frame" x="10" y="336" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o1H-zo-zr8">
+                                <rect key="frame" x="10" y="387" width="394" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="NEr-YM-xfz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E71-ic-Zh7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -311,10 +323,15 @@
                             <constraint firstItem="ncV-7f-TeZ" firstAttribute="top" secondItem="Bq0-QV-G9v" secondAttribute="bottom" constant="30" id="Ccg-VG-07K"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="WXc-ck-cKo" secondAttribute="trailing" constant="10" id="GbY-Ky-wp4"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="Bq0-QV-G9v" secondAttribute="trailing" constant="10" id="Gc0-N3-QCP"/>
+                            <constraint firstItem="o1H-zo-zr8" firstAttribute="top" secondItem="hun-cO-9pA" secondAttribute="bottom" constant="30" id="H6f-NS-w2q"/>
+                            <constraint firstItem="o1H-zo-zr8" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="I8y-eU-yhK"/>
                             <constraint firstItem="av1-as-QtW" firstAttribute="top" secondItem="ncV-7f-TeZ" secondAttribute="bottom" constant="30" id="Jok-d7-355"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="av1-as-QtW" secondAttribute="trailing" constant="10" id="O2d-vO-FSF"/>
                             <constraint firstItem="74V-kf-8Lu" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="Ovs-lX-ECv"/>
+                            <constraint firstItem="hun-cO-9pA" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="P4S-3d-mHi"/>
                             <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="hD0-Lu-tlC" secondAttribute="trailing" constant="10" id="Qkw-al-F4q"/>
+                            <constraint firstItem="hun-cO-9pA" firstAttribute="top" secondItem="hD0-Lu-tlC" secondAttribute="bottom" constant="30" id="UWL-jF-71y"/>
+                            <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="o1H-zo-zr8" secondAttribute="trailing" constant="10" id="Vxy-rd-EAE"/>
                             <constraint firstItem="hD0-Lu-tlC" firstAttribute="top" secondItem="74V-kf-8Lu" secondAttribute="bottom" constant="30" id="Yd1-3K-m34"/>
                             <constraint firstItem="Bq0-QV-G9v" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="Yhn-4d-5ye"/>
                             <constraint firstItem="av1-as-QtW" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="gMm-Nw-rT3"/>
@@ -323,10 +340,12 @@
                             <constraint firstItem="74V-kf-8Lu" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="lDV-X7-etD"/>
                             <constraint firstItem="74V-kf-8Lu" firstAttribute="top" secondItem="av1-as-QtW" secondAttribute="bottom" constant="30" id="rfW-cx-Qaz"/>
                             <constraint firstItem="WXc-ck-cKo" firstAttribute="leading" secondItem="E71-ic-Zh7" secondAttribute="leading" constant="10" id="xfy-U1-3gl"/>
+                            <constraint firstItem="E71-ic-Zh7" firstAttribute="trailing" secondItem="hun-cO-9pA" secondAttribute="trailing" constant="10" id="ybd-Td-enr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ggY-dP-Dku"/>
                     <connections>
+                        <outlet property="ImageView" destination="o1H-zo-zr8" id="ZCM-31-PHj"/>
                         <outlet property="placeaddress" destination="av1-as-QtW" id="69Q-Yh-xR0"/>
                         <outlet property="placeinfo" destination="hD0-Lu-tlC" id="QQr-DA-qeB"/>
                         <outlet property="placename" destination="Bq0-QV-G9v" id="Plv-Yk-qRq"/>

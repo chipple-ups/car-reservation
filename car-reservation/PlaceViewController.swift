@@ -45,10 +45,16 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         ///performSegue(withIdentifier: "cellSegue",sender: nil)
+        print("didSelectRowAtが呼ばれた")
         let placeShowViewController = storyboard!.instantiateViewController(withIdentifier: "Cell") as! PlaceShowViewController
         let task = placeArray[indexPath.row]
         let placename = task.name
+        let placeinfo = task.info
+        let placeaddress = task.address
         placeShowViewController.name = placename
+        placeShowViewController.info = placeinfo
+        placeShowViewController.address = placeaddress
+        
             present(placeShowViewController, animated: true)
         
         
