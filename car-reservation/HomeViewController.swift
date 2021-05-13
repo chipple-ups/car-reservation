@@ -6,16 +6,38 @@
 //
 
 import UIKit
+import Firebase
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    
+    var myReserveArray: [myReserveInfo] = []
+    var listener: ListenerRegistration?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
-    
+        
+    // データの数（＝セルの数）を返すメソッド
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return myReserveArray.count
+    }
+    // 各セルの内容を返すメソッド
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 再利用可能な cell を得る
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
+        return cell
+    }
+
+    // 各セルを選択した時に実行されるメソッド
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "cellSegue0",sender: nil)
+        
+        
+    }
     /*
     // MARK: - Navigation
 

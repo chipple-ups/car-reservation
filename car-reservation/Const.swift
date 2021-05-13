@@ -11,4 +11,5 @@ struct Const {
     static let InfoPath = "info"
     static let PlacePath = "place"
     static let ReservePath = "reserve"
+    static let CalendarPath = "calendar"
 }
