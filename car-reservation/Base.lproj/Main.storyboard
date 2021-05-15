@@ -114,12 +114,28 @@
                                     <constraint firstAttribute="height" constant="300" id="Trl-YZ-I7I"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ZK6-4X-LAl">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" textLabel="EoD-dH-jDH" detailTextLabel="uvd-SA-xPV" style="IBUITableViewCellStyleSubtitle" id="ZK6-4X-LAl">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZK6-4X-LAl" id="wEL-x9-4fH">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EoD-dH-jDH">
+                                                    <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uvd-SA-xPV">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -275,7 +291,7 @@
         <!--Home Result View Controller-->
         <scene sceneID="Xcn-Oy-8rP">
             <objects>
-                <viewController id="VxN-k1-Opn" customClass="HomeResultViewController" customModule="car_reservation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home2" id="VxN-k1-Opn" customClass="HomeResultViewController" customModule="car_reservation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PpB-VJ-vMi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,15 +371,16 @@
                             <constraint firstItem="QWY-z6-84e" firstAttribute="top" secondItem="EnE-IO-rwe" secondAttribute="top" constant="50" id="kbK-Rn-4hn"/>
                             <constraint firstItem="QWY-z6-84e" firstAttribute="leading" secondItem="EnE-IO-rwe" secondAttribute="leading" constant="10" id="lLZ-hG-pgm"/>
                             <constraint firstItem="EnE-IO-rwe" firstAttribute="trailing" secondItem="Vs9-uS-uEb" secondAttribute="trailing" constant="10" id="vqg-Sb-ilm"/>
+                            <constraint firstItem="QWY-z6-84e" firstAttribute="top" secondItem="EnE-IO-rwe" secondAttribute="top" constant="50" id="xZ7-gL-xil"/>
                             <constraint firstItem="9cb-Gt-Dhb" firstAttribute="leading" secondItem="EnE-IO-rwe" secondAttribute="leading" constant="10" id="y9d-Ha-jD1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2vE-Wr-7Gg"/>
                     <connections>
-                        <outlet property="date" destination="6qL-8o-cmE" id="vPk-AA-loc"/>
-                        <outlet property="item" destination="Vs9-uS-uEb" id="4ew-6P-koq"/>
-                        <outlet property="noc" destination="0HJ-af-aJg" id="9Nz-gd-SyW"/>
-                        <outlet property="place" destination="VUu-87-4eg" id="H1k-F6-JGd"/>
+                        <outlet property="mydate" destination="6qL-8o-cmE" id="3nD-Qb-Li2"/>
+                        <outlet property="myitem" destination="Vs9-uS-uEb" id="ARr-ze-2RZ"/>
+                        <outlet property="mynoc" destination="0HJ-af-aJg" id="8KF-7o-CYZ"/>
+                        <outlet property="myplace" destination="VUu-87-4eg" id="peW-nm-kqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmP-ZJ-hop" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

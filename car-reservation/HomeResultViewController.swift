@@ -8,14 +8,29 @@
 import UIKit
 
 class HomeResultViewController: UIViewController {
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var place: UILabel!
-    @IBOutlet weak var noc: UILabel!
-    @IBOutlet weak var item: UILabel!
+    @IBOutlet weak var mydate: UILabel!
+    @IBOutlet weak var myplace: UILabel!
+    @IBOutlet weak var mynoc: UILabel!
+    @IBOutlet weak var myitem: UILabel!
+    
+    
+    var date : String?
+    var place : String?
+    var noc : String?
+    var item : String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(place!)
+        mydate.text = date
+        myplace.text = place
+        mynoc.text = noc
+        myitem.text = item
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }

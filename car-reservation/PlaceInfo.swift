@@ -14,6 +14,7 @@ class PlaceInfo: NSObject {
     var info: String?
     var pay: String?
     var address: String?
+    var sort: String?
 
     
     init(document: QueryDocumentSnapshot) {
@@ -29,6 +30,7 @@ class PlaceInfo: NSObject {
 
         self.pay = postDic["pay"] as? String
 
+        self.sort = postDic["sort"] as? String
 
 
 

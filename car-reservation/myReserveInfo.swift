@@ -10,25 +10,28 @@ import Firebase
 
 class myReserveInfo: NSObject {
     var id: String
-    var name: String?
-    var info: String?
-    var pay: String?
-    var address: String?
+    var user: String?
+    var place: String?
+    var item: String?
+    var noc: String?
+    var date: Date?
 
     
     init(document: QueryDocumentSnapshot) {
         self.id = document.documentID
 
         let postDic = document.data()
+        
+        let timestamp = postDic["date"] as? Timestamp
+        self.date = timestamp?.dateValue()
 
-        self.name = postDic["name"] as? String
+        self.user = postDic["user"] as? String
 
-        self.info = postDic["info"] as? String
+        self.place = postDic["place"] as? String
 
-        self.address = postDic["address"] as? String
+        self.item = postDic["item"] as? String
 
-        self.pay = postDic["pay"] as? String
-
+        self.noc = postDic["noc"] as? String
 
 
 
