@@ -215,6 +215,7 @@
                     <tabBarItem key="tabBarItem" title="予約" image="square.and.pencil" catalog="system" id="qF4-ev-ifx"/>
                     <connections>
                         <outlet property="datePicker" destination="wAZ-Sr-41u" id="VRG-qE-gYw"/>
+                        <outlet property="tableView" destination="zNW-Hf-d3v" id="eQf-3C-czX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TLa-Dd-y8j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
