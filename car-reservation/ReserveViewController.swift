@@ -27,19 +27,26 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     
         let docRef = Firestore.firestore().collection(Const.CalendarPath).document(myinputDatePicker)
         docRef.getDocument { (document, error) in
+            // ドキュメントがあれば
             if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-                self.placelistCount = self.placelistArray[0].placelist?.count ?? 0
-                print(self.placelistCount)
                 
-                self.placelistArray = document[[String:Any?]] as! [ReservePlaceInfo]
+                //データを、[String:[NSArray]]の形で取得
+                let data = document.data() as! [String:[NSArray]]
+                // placelistの件数
+                self.placelistCount = data["placelist"]!.count
+                print(document.data()!)
+                
+                
+
+                //placelistArray = document.data([[String : Any]])
+                
                 //テーブルビューを再表示
                 self.tableView.reloadData()
                 
             } else {
                 self.placelistCount = 0
                 print("Document does not exist")
+                self.tableView.reloadData()
             }
         }
         
@@ -74,8 +81,8 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
             // 再利用可能な cell を得る
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell3", for: indexPath)
             // Cellに値を設定する.  --- ここから ---
-            //let task = placelistArray[indexPath.row]
-            cell.textLabel?.text = "aaa"
+            let task = placelistArray[indexPath.row]
+            //cell.textLabel?.text = task.placelist: [[String:Any]]?
             
             return cell
         }
