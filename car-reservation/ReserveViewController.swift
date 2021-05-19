@@ -33,6 +33,10 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.placelistCount = self.placelistArray[0].placelist?.count ?? 0
                 print(self.placelistCount)
                 
+                self.placelistArray = document[[String:Any?]] as! [ReservePlaceInfo]
+                //テーブルビューを再表示
+                self.tableView.reloadData()
+                
             } else {
                 self.placelistCount = 0
                 print("Document does not exist")
