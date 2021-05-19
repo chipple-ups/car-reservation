@@ -28,12 +28,15 @@ class PlaceViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //　データの数（セルの数）を返すメソッド
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return placeArray.count
         
     }
     
     //　各セルの内容を返すメソッド
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        
         // 再利用可能な cell を得る
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         // Cellに値を設定する.  --- ここから ---

@@ -13,6 +13,7 @@
 		AC95DDE62646CD46003B3BA3 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC95DDE52646CD46003B3BA3 /* Const.swift */; };
 		ACB77A54264D2F5C0001F08C /* HomeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB77A53264D2F5C0001F08C /* HomeResultViewController.swift */; };
 		ACB77A57264D33C10001F08C /* myReserveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB77A56264D33C10001F08C /* myReserveInfo.swift */; };
+		ACB77A6226516C180001F08C /* ReservePlaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB77A6126516C170001F08C /* ReservePlaceInfo.swift */; };
 		ACBD025A263D921C00DBF110 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD0259263D921C00DBF110 /* AppDelegate.swift */; };
 		ACBD025C263D921C00DBF110 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBD025B263D921C00DBF110 /* SceneDelegate.swift */; };
 		ACBD0261263D921D00DBF110 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACBD025F263D921D00DBF110 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		AC95DDE52646CD46003B3BA3 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		ACB77A53264D2F5C0001F08C /* HomeResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResultViewController.swift; sourceTree = "<group>"; };
 		ACB77A56264D33C10001F08C /* myReserveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myReserveInfo.swift; sourceTree = "<group>"; };
+		ACB77A6126516C170001F08C /* ReservePlaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservePlaceInfo.swift; sourceTree = "<group>"; };
 		ACBD0256263D921C00DBF110 /* car-reservation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "car-reservation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACBD0259263D921C00DBF110 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACBD025B263D921C00DBF110 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,10 +112,11 @@
 				ACBD0288263FF03900DBF110 /* TabBarController.swift */,
 				ACBD027E263D9F7C00DBF110 /* MyPageViewController.swift */,
 				ACBD027B263D9F3700DBF110 /* PlaceViewController.swift */,
-				AC95DDE52646CD46003B3BA3 /* Const.swift */,
 				AC95DDDF26464E5D003B3BA3 /* PlaceShowViewController.swift */,
+				AC95DDE52646CD46003B3BA3 /* Const.swift */,
 				AC95DDE22646C772003B3BA3 /* PlaceInfo.swift */,
 				ACB77A56264D33C10001F08C /* myReserveInfo.swift */,
+				ACB77A6126516C170001F08C /* ReservePlaceInfo.swift */,
 				ACBD0278263D9E6A00DBF110 /* ReserveViewController.swift */,
 				ACBE414F2644EC2B007A38AD /* ReserveConfirmationViewController.swift */,
 				ACBD0275263D9B5200DBF110 /* HomeViewController.swift */,
@@ -246,6 +249,7 @@
 				ACBD0273263D97DD00DBF110 /* LoginViewController.swift in Sources */,
 				ACB77A57264D33C10001F08C /* myReserveInfo.swift in Sources */,
 				ACBE41502644EC2B007A38AD /* ReserveConfirmationViewController.swift in Sources */,
+				ACB77A6226516C180001F08C /* ReservePlaceInfo.swift in Sources */,
 				ACBD0289263FF03900DBF110 /* TabBarController.swift in Sources */,
 				ACBD027C263D9F3700DBF110 /* PlaceViewController.swift in Sources */,
 				AC95DDE62646CD46003B3BA3 /* Const.swift in Sources */,

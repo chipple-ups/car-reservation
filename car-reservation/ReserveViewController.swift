@@ -8,15 +8,39 @@
 import UIKit
 import Firebase
 
-
 class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var tableView: UITableView!
     
-    var placelistArray: [myReserveInfo] = []
+    var placelistArray: [ReservePlaceInfo] = []
     var listener: ListenerRegistration?
+    var placelistCount: Int = 0
     
-    let inputDatePicker = UIDatePicker()
+
+    
+    @IBAction func datePicker(_ sender: UIDatePicker) {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let myinputDatePicker = formatter.string(from: sender.date)
+        
+        print(myinputDatePicker)
+    
+        let docRef = Firestore.firestore().collection(Const.CalendarPath).document(myinputDatePicker)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                print("Document data: \(dataDescription)")
+                self.placelistCount = self.placelistArray[0].placelist?.count ?? 0
+                print(self.placelistCount)
+                
+            } else {
+                self.placelistCount = 0
+                print("Document does not exist")
+            }
+        }
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,40 +49,69 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
 
     }
+    
+    
+    
         // データの数（＝セルの数）を返すメソッド
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return placelistArray.count
+ 
+            if placelistCount == 0{
+                print(placelistCount)
+                return 0
+            } else {
+                print(placelistCount)
+                return placelistCount
+        }
         }
     
     
-    // 各セルの内容を返すメソッド
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let docRef = Firestore.firestore().collection(Const.CalendarPath).document("20210513")
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                print("Document data: \(dataDescription)")
-            } else {
-                print("Document does not exist")
+        // 各セルの内容を返すメソッド
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            // 再利用可能な cell を得る
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell3", for: indexPath)
+            // Cellに値を設定する.  --- ここから ---
+            //let task = placelistArray[indexPath.row]
+            cell.textLabel?.text = "aaa"
+            
+            return cell
+        }
+        // 各セルを選択した時に実行されるメソッド
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        }
+
+    
+        override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("DEBUG_PRINT: viewWillAppear")
+        // ログイン済みか確認
+        if Auth.auth().currentUser != nil {
+            // listenerを登録して投稿データの更新を監視する
+            let postsRef = Firestore.firestore().collection(Const.CalendarPath)
+            listener = postsRef.addSnapshotListener() { (querySnapshot, error) in
+                if let error = error {
+                    print("DEBUG_PRINT: snapshotの取得が失敗しました。 \(error)")
+                    return
+                }
+                self.placelistArray = querySnapshot!.documents.map { document in
+                    print("DEBUG_PRINT: document取得 \(document.documentID)")
+                    let postData = ReservePlaceInfo(document: document)
+                    return postData
+                }
+                // TableViewの表示を更新する
+                self.tableView.reloadData()
             }
         }
-        // 再利用可能な cell を得る
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell3", for: indexPath)
-        // Cellに値を設定する.  --- ここから ---
-        let task = placelistArray[indexPath.row]
-        cell.textLabel?.text = task.0001
-        cell.detailTextLabel?.text = task.0001
-
-
-        
-        return cell
     }
-    // 各セルを選択した時に実行されるメソッド
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("DEBUG_PRINT: viewWillDisappear")
+        // listenerを削除して監視を停止する
+        listener?.remove()
     }
-
+    
+    
     /*
     // MARK: - Navigation
 
