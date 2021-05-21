@@ -14,6 +14,7 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
     var placelistArray: [[String:Any]] = []
     var listener: ListenerRegistration?
     var placelistCount: Int = 0
+    var selectPlaceList: Int = 0
     
 
     
@@ -89,12 +90,24 @@ class ReserveViewController: UIViewController, UITableViewDelegate, UITableViewD
             for (key, value) in task {
               print("\(key) -> \(value)")
             }
-            cell.textLabel?.text = task["place"]
+            cell.textLabel?.text = task["place"] as? String
+            cell.detailTextLabel?.text = task["noc"] as? String
             
             return cell
         }
         // 各セルを選択した時に実行されるメソッド
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            print("didSelectRowAtが呼ばれた")
+            
+            let task = placelistArray[indexPath.row]
+            for (key, value) in task {
+              print("\(key) -> \(value)")
+                
+                //self.placedata = task["place"] as? String
+                //self.nocdata = task["noc"]
+            }
+            
+            //let selectPlaceList =
 
         }
 
