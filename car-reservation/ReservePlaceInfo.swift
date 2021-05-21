@@ -16,10 +16,10 @@ class ReservePlaceInfo: NSObject {
     //var noc: String?
     //var date: Date?
     var placelist: [[String:Any]]? = []
-    var place: String?
-    var noc: Int?
+    //var place: String?
+    //var noc: Int?
     
-    init(document: QueryDocumentSnapshot) {
+    init(document: DocumentSnapshot) {
         //self.id = document.documentID
         let postDic = document.data()
         //let timestamp = postDic["date"] as? Timestamp
@@ -28,10 +28,10 @@ class ReservePlaceInfo: NSObject {
         //self.place = postDic["place"] as? String
         //self.item = postDic["item"] as? String
         //self.noc = postDic["noc"] as? String
-        
-        self.placelist = postDic["placelist"] as? [[String : Any]]
-        self.place = postDic["place"] as? String
-        self.noc = postDic["noc"] as? Int
+        self.placelist = postDic!["placelist"] as? [[String : Any]]
+        ///self.placelist = postDic["placelist"] as? [[String : Any]]
+        //self.place = postDic["place"] as? String
+        //self.noc = postDic["noc"] as? Int
         
 
 
